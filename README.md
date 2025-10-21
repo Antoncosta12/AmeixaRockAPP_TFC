@@ -3,7 +3,7 @@
 ## Instalación
 
 1. Clonar el repositorio pegando este comando en la línea de comandos:
-   git clone https://github.com/Antoncosta12/AmeixaRockAPP_TFC.git
+   - "git clone https://github.com/Antoncosta12/AmeixaRockAPP_TFC.git"
 2. Abrir el proyecto en Android Studio:
    - En el menú principal seleccionar File -> Open
    - Posteriormente seleccionar la carpeta de proyecto
