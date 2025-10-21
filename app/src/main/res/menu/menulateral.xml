@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item android:id="@+id/HomeScreen" android:title="Home"/>
+        <item android:id="@+id/MerchandisingScreen" android:title="Merchandising"/>
+        <item android:id="@+id/InformacionScreen" android:title="Informacion"/>
+        <item android:id="@+id/HistoriaScreen" android:title="Historia"/>
+        <item android:id="@+id/ContactoScreen" android:title="Contacto"/>
+
+</menu>

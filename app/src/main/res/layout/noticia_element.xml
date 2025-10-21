@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="190dp"
+    android:background="@drawable/item_noticia_card"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imgFotoNoticia"
+        android:layout_width="300dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:id="@+id/txtTituloNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgFotoNoticia"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtDescripcionNoticia"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/txtTituloNoticia"-->
+<!--        android:layout_marginLeft="40dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:fontFamily="serif"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="13dp" />-->
+
+</RelativeLayout>
