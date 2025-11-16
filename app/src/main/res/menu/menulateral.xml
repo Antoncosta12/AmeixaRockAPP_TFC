@@ -6,5 +6,6 @@
         <item android:id="@+id/InformacionScreen" android:title="Informacion"/>
         <item android:id="@+id/HistoriaScreen" android:title="Historia"/>
         <item android:id="@+id/ContactoScreen" android:title="Contacto"/>
+        <item android:id="@+id/CerrarSesion" android:title="Cerrar Sesión"/>
 
 </menu>

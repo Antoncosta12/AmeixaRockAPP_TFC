@@ -5,6 +5,123 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vista.MerchandisingActivity">
+    tools:context=".vista.MerchandisingActivity"
+    android:background="@color/AmeixaRockBackGround">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/AmeixaRockBackGround"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="MERCHANDISING"
+            android:textColor="@color/TitulosScreen"
+            android:textSize="35dp"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/listaProdutos"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupFiltrosProducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            app:singleSelection="true"
+            android:paddingRight="25dp"
+            android:paddingLeft="25dp"
+            app:chipSpacingHorizontal="15dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTodos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Todos"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/GrisChips"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCamisolas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Camisolas"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/GrisChips"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSuadoiros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Suadoiros"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/GrisChips"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBolsas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Bolsas"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/GrisChips"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipComplementos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complementos"
+                android:checkable="true"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/GrisChips"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFavoritos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favoritos"
+                android:checkable="true"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/GrisChips"
+                />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaProdutos"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

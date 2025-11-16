@@ -23,10 +23,12 @@ public class ProductoDAO {
         ContentValues values = new ContentValues();
         values.put(DBContract.productEntry.COLUMN_NAME_IDPRODUCTO, producto.getId());
         values.put(DBContract.productEntry.COLUMN_NAME_NOMPROD, producto.getNombreProducto());
+        values.put(DBContract.productEntry.COLUMN_NAME_MATPROD, producto.getMaterialProducto());
+        values.put(DBContract.productEntry.COLUMN_NAME_OBSPROD, producto.getObservacionProducto());
         values.put(DBContract.productEntry.COLUMN_NAME_DESCRPROD, producto.getDescripProducto());
         values.put(DBContract.productEntry.COLUMN_NAME_FOTO, producto.getFoto());
         values.put(DBContract.productEntry.COLUMN_NAME_PRECIO, producto.getPrecio());
-        values.put(DBContract.productEntry.COLUMN_NAME_TALLAS, producto.getTallas());
+        values.put(DBContract.productEntry.COLUMN_NAME_CATEGORIA, producto.getCategoria());
 
         long newRowId = db.insert(DBContract.productEntry.TABLE_NAME, null, values);
     }
@@ -40,10 +42,12 @@ public class ProductoDAO {
             values = new ContentValues();
             values.put(DBContract.productEntry.COLUMN_NAME_IDPRODUCTO, producto.getId());
             values.put(DBContract.productEntry.COLUMN_NAME_NOMPROD, producto.getNombreProducto());
+            values.put(DBContract.productEntry.COLUMN_NAME_MATPROD, producto.getMaterialProducto());
+            values.put(DBContract.productEntry.COLUMN_NAME_OBSPROD, producto.getObservacionProducto());
             values.put(DBContract.productEntry.COLUMN_NAME_DESCRPROD, producto.getDescripProducto());
             values.put(DBContract.productEntry.COLUMN_NAME_FOTO, producto.getFoto());
             values.put(DBContract.productEntry.COLUMN_NAME_PRECIO, producto.getPrecio());
-            values.put(DBContract.productEntry.COLUMN_NAME_TALLAS, producto.getTallas());
+            values.put(DBContract.productEntry.COLUMN_NAME_CATEGORIA, producto.getCategoria());
 
             newRowId = db.insert(DBContract.productEntry.TABLE_NAME, null, values);
         }
@@ -56,10 +60,12 @@ public class ProductoDAO {
         String[] columnas = {
                 DBContract.productEntry.COLUMN_NAME_IDPRODUCTO,
                 DBContract.productEntry.COLUMN_NAME_NOMPROD,
+                DBContract.productEntry.COLUMN_NAME_MATPROD,
+                DBContract.productEntry.COLUMN_NAME_OBSPROD,
                 DBContract.productEntry.COLUMN_NAME_DESCRPROD,
                 DBContract.productEntry.COLUMN_NAME_FOTO,
                 DBContract.productEntry.COLUMN_NAME_PRECIO,
-                DBContract.productEntry.COLUMN_NAME_TALLAS
+                DBContract.productEntry.COLUMN_NAME_CATEGORIA
         };
 
         Cursor cursor = db.query(
@@ -75,15 +81,17 @@ public class ProductoDAO {
         while(cursor.moveToNext()) {
             int id = cursor.getInt(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_IDPRODUCTO));
             String nomProd = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_NOMPROD));
+            String matProd = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_MATPROD));
+            String obsProd = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_OBSPROD));
             String descripcion = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_DESCRPROD));
             String foto = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_FOTO));
             double precio = cursor.getDouble(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_PRECIO));
-            String tallas = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_TALLAS));
-            listaProductos.add(new Producto(id, nomProd, descripcion, foto, precio, tallas));
+            String categoria = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_CATEGORIA));
+            listaProductos.add(new Producto(id, nomProd, matProd, obsProd, descripcion, foto, precio, categoria));
         }
         cursor.close();
 
-        return new ArrayList<>();
+        return listaProductos;
     }
 
     public Producto obtenerProductoPorId(int idProducto) {
@@ -93,10 +101,12 @@ public class ProductoDAO {
         String[] columnas = {
                 DBContract.productEntry.COLUMN_NAME_IDPRODUCTO,
                 DBContract.productEntry.COLUMN_NAME_NOMPROD,
+                DBContract.productEntry.COLUMN_NAME_MATPROD,
+                DBContract.productEntry.COLUMN_NAME_OBSPROD,
                 DBContract.productEntry.COLUMN_NAME_DESCRPROD,
                 DBContract.productEntry.COLUMN_NAME_FOTO,
                 DBContract.productEntry.COLUMN_NAME_PRECIO,
-                DBContract.productEntry.COLUMN_NAME_TALLAS
+                DBContract.productEntry.COLUMN_NAME_CATEGORIA
         };
 
         String selection = DBContract.productEntry.COLUMN_NAME_IDPRODUCTO + " = ?";
@@ -115,11 +125,13 @@ public class ProductoDAO {
         if(cursor.moveToFirst()) {
             int id = cursor.getInt(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_IDPRODUCTO));
             String nomProd = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_NOMPROD));
+            String matProd = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_MATPROD));
+            String obsProd = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_OBSPROD));
             String descripcion = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_DESCRPROD));
             String foto = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_FOTO));
             double precio = cursor.getDouble(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_PRECIO));
-            String tallas = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_TALLAS));
-            producto = new Producto(id, nomProd, descripcion, foto, precio, tallas);
+            String categoria = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.productEntry.COLUMN_NAME_CATEGORIA));
+            producto = new Producto(id, nomProd, matProd, obsProd, descripcion, foto, precio, categoria);
         }
         cursor.close();
         return producto;

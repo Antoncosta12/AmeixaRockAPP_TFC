@@ -13,4 +13,14 @@
     <style name="Theme.AmeixaRockAPP_TFC.AppBarOverlay"
         parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.AmeixaRockAPP_TFC.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    //PENDIENTE DE REVISIÓN
+<!--    <style name="CustomChipsAmeixaRock" parent="Widget.MaterialComponents.Chip.Choice">-->
+<!--        <item name="android:checkable">true</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="chipBackgroundColor">@color/GrisChips</item>-->
+<!--        <item name="chipStrokeWidth">1dp</item>-->
+<!--        <item name="chipStrokeColor">@color/white</item>-->
+<!--        <item name="rippleColor">@color/RojoAmeixaRock</item>-->
+<!--    </style>-->
 </resources>

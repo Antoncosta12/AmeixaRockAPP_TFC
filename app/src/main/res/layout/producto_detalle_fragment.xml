@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/producto_detail_card">
+
+    <TextView
+        android:id="@+id/txtNombreProductoDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:text="Holaaaa"
+        android:textColor="#C2A14D"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        />
+    <FrameLayout
+        android:id="@+id/imgFotoProdFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtNombreProductoDetail"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/imgFotoProductoDetail"
+            android:layout_width ="240dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            />
+
+        <ImageButton
+            android:id="@+id/estrellaFavoritos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/btn_star_big_off" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/txtDescripcionProductoDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/imgFotoProdFrame"
+        android:fontFamily="monospace"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txtTallasProductoDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/txtDescripcionProductoDetail"
+        android:fontFamily="monospace"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/txtObservacionProductoDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/txtTallasProductoDetail"
+        android:fontFamily="monospace"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/txtMaterialProductoDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/txtObservacionProductoDetail"
+        android:fontFamily="monospace"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPrecioProducto"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtMaterialProductoDetail"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="#641414"
+
+        >
+        <TextView
+            android:id="@+id/txtPrecioProductoDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

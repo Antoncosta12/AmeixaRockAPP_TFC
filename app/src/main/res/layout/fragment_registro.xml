@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.RegistroFragment"
+    android:background="@drawable/fondo_degradado">
+
+    <ImageButton
+        android:id="@+id/btnAtrasRegistro"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/arrow_back"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/txtTituloRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMEIXA ROCK\n2025"
+        android:textColor="@color/TitulosScreen"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="70dp"
+        />
+
+    <EditText
+        android:id="@+id/txtNombreRegistro"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="NOMBRE COMPLETO"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#F5E8C7"
+        android:background="@drawable/campo_texto"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloRegistro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="50dp"
+        />
+
+    <EditText
+        android:id="@+id/txtCorreoRegistro"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="CORREO ELECTRÓNICO"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#F5E8C7"
+        android:background="@drawable/campo_texto"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreRegistro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/txtNomUserRegistro"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="NOMBRE DE USUARIO"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#F5E8C7"
+        android:background="@drawable/campo_texto"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/txtCorreoRegistro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/txtPasswordRegistro"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="CONTRASEÑA"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#F5E8C7"
+        android:background="@drawable/campo_texto"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomUserRegistro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/txtOrigen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Como nos conociste?"
+        android:textColor="@color/TitulosScreen"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintTop_toBottomOf="@+id/txtPasswordRegistro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        />
+
+    <Spinner
+        android:id="@+id/cmbOrigenRegistro"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:spinnerMode="dropdown"
+        android:background="@drawable/campo_texto"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrigen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#B22222"
+        android:text="REGISTRARSE"
+        android:textColor="#F5E8C7"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cmbOrigenRegistro"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

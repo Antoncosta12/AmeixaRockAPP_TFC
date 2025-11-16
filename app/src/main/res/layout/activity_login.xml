@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vista.LoginActivity"
+    android:background="@drawable/fondo_degradado">
+
+    <TextView
+        android:id="@+id/txtTituloLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMEIXA ROCK\n2025"
+        android:textColor="@color/TitulosScreen"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="110dp"
+        />
+
+    <EditText
+        android:id="@+id/txtNomUserLogin"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="NOMBRE"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#F5E8C7"
+        android:background="@drawable/campo_texto"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="50dp"
+        />
+
+    <EditText
+        android:id="@+id/txtPasswordLogin"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="CONTRASEÑA"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#F5E8C7"
+        android:background="@drawable/campo_texto"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomUserLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="30dp"
+        />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#B22222"
+        android:text="INICIAR SESIÓN"
+        android:textColor="#F5E8C7"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPasswordLogin" />
+
+    <TextView
+        android:id="@+id/txtRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿AÚN NO TIENES CUENTA?"
+        android:textColor="#F5E8C7"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        android:layout_marginTop="30dp"
+        />
+
+    <Button
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREAR CUENTA"
+        android:textColor="#B22222"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRegistro"
+        android:layout_marginTop="10dp"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragmentocontenedor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
