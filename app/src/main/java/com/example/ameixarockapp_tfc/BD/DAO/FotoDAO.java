@@ -67,7 +67,7 @@ public class FotoDAO {
             int id = cursor.getInt(cursor.getColumnIndexOrThrow(DBContract.fotoEntry.COLUMN_NAME_IDFOTO));
             String foto = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.fotoEntry.COLUMN_NAME_FOTO));
             int edicion = cursor.getInt(cursor.getColumnIndexOrThrow(DBContract.fotoEntry.COLUMN_NAME_EDICION));
-            listaFotos.add(new Foto(id, edicion, foto));
+            listaFotos.add(new Foto(id, foto, edicion));
         }
         cursor.close();
 
@@ -101,7 +101,7 @@ public class FotoDAO {
             int id = cursor.getInt(cursor.getColumnIndexOrThrow(DBContract.fotoEntry.COLUMN_NAME_IDFOTO));
             String fotografia = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.fotoEntry.COLUMN_NAME_FOTO));
             int edicion = cursor.getInt(cursor.getColumnIndexOrThrow(DBContract.fotoEntry.COLUMN_NAME_EDICION));
-            foto = new Foto(id, edicion, fotografia);
+            foto = new Foto(id, fotografia, edicion);
         }
         cursor.close();
         return foto;
@@ -134,7 +134,7 @@ public class FotoDAO {
             int id = cursor.getInt(cursor.getColumnIndexOrThrow(DBContract.fotoEntry.COLUMN_NAME_IDFOTO));
             String fotografia = cursor.getString(cursor.getColumnIndexOrThrow(DBContract.fotoEntry.COLUMN_NAME_FOTO));
             int edicion = cursor.getInt(cursor.getColumnIndexOrThrow(DBContract.fotoEntry.COLUMN_NAME_EDICION));
-            foto = new Foto(id, edicion, fotografia);
+            foto = new Foto(id, fotografia, edicion);
         }
         cursor.close();
         return foto;

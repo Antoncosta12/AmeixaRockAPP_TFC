@@ -5,7 +5,7 @@ public class Foto {
     private String foto;
     private int edicion;
 
-    public Foto(int id, int edicion, String foto) {
+    public Foto(int id, String foto, int edicion) {
         this.id = id;
         this.edicion = edicion;
         this.foto = foto;
