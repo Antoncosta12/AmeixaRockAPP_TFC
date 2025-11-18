@@ -54,7 +54,7 @@ public class FavoritoProductoDAO {
         long newRowId = db.delete(DBContract.favoritoProductoEntry.TABLE_NAME, selection, selectionArgs);
     }
 
-    public List<FavoritoProducto> obtenerFavoritosProdUsuario(int idUsuario) {
+    public List<FavoritoProducto>  obtenerFavoritosProdUsuario(int idUsuario) {
         List<FavoritoProducto> listaFavsProductos= new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 

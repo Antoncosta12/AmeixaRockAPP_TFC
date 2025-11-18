@@ -16,10 +16,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.ameixarockapp_tfc.BD.BD.DBHelper;
+import com.example.ameixarockapp_tfc.BD.DAO.FotoDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.NoticiaDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.ProductoDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.TallaDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.UsuarioDAO;
+import com.example.ameixarockapp_tfc.BD.modelo.Foto;
 import com.example.ameixarockapp_tfc.BD.modelo.Noticia;
 import com.example.ameixarockapp_tfc.BD.modelo.Producto;
 import com.example.ameixarockapp_tfc.BD.modelo.Talla;
@@ -41,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     private TallaDAO tallaDAO;
     private NoticiaDAO noticiaDAO;
     private UsuarioDAO usuarioDAO;
+    private FotoDAO fotoDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         tallaDAO = new TallaDAO(dbHelper);
         noticiaDAO = new NoticiaDAO(dbHelper);
         usuarioDAO = new UsuarioDAO(dbHelper);
+        fotoDAO = new FotoDAO(dbHelper);
 
         Context context = this;
         SharedPreferences sharedPrefsLogin = context.getSharedPreferences(
@@ -215,6 +219,33 @@ public class LoginActivity extends AppCompatActivity {
         } catch (NumberFormatException e) {
             throw new RuntimeException("Error de formato de ID: " + e.getMessage(),e);
         }
+
+        try {
+            InputStream is = getAssets().open("fotosameixarock.csv");
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String line;
+
+            br.readLine();
+            while((line = br.readLine()) != null){
+                String[] propiedades = line.split(";", -1);
+
+                if(propiedades.length >= 3){
+                    int id = Integer.parseInt(propiedades[0].trim());
+                    String foto = propiedades[1].trim();
+                    int edicion = Integer.parseInt(propiedades[2].trim());
+                    if(fotoDAO.obtenerFotoPorId(id) == null){
+                        fotoDAO.insertarFoto(new Foto(id, foto, edicion));
+                    }
+                }
+            }
+            br.close();
+            is.close();
+        } catch (IOException e) {
+            throw new RuntimeException("Error de lectura de datos: " + e.getMessage(),e);
+        } catch (NumberFormatException e) {
+            throw new RuntimeException("Error de formato de ID: " + e.getMessage(),e);
+        }
+
 //        try {
 //            InputStream is = getAssets().open("usuariosameixarock.csv");
 //            BufferedReader br = new BufferedReader(new InputStreamReader(is));

@@ -152,8 +152,10 @@ public class MerchandisingActivity extends BaseActivity {
                 int posicion = recyclerView.getChildAdapterPosition(view);
                 if(posicion >= 0){
                     Producto producto = prodFiltrados.get(posicion);
-                    ProductoDialogFragment dialogFragment = new ProductoDialogFragment(producto);
-                    dialogFragment.show(getSupportFragmentManager(), null);
+                    if(producto != null){
+                        ProductoDialogFragment dialogFragment = new ProductoDialogFragment(producto);
+                        dialogFragment.show(getSupportFragmentManager(), null);
+                    }
                 }
             }
         });

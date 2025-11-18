@@ -21,7 +21,6 @@ public class FotoDAO {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(DBContract.fotoEntry.COLUMN_NAME_IDFOTO, foto.getId());
         values.put(DBContract.fotoEntry.COLUMN_NAME_FOTO, foto.getFoto());
         values.put(DBContract.fotoEntry.COLUMN_NAME_EDICION, foto.getEdicion());
 
@@ -35,7 +34,6 @@ public class FotoDAO {
 
         for(Foto foto : fotos){
             values = new ContentValues();
-            values.put(DBContract.fotoEntry.COLUMN_NAME_IDFOTO, foto.getId());
             values.put(DBContract.fotoEntry.COLUMN_NAME_FOTO, foto.getFoto());
             values.put(DBContract.fotoEntry.COLUMN_NAME_EDICION, foto.getEdicion());
 
@@ -71,7 +69,7 @@ public class FotoDAO {
         }
         cursor.close();
 
-        return new ArrayList<>();
+        return listaFotos;
     }
 
     public Foto obtenerFotoPorId(int idFoto) {

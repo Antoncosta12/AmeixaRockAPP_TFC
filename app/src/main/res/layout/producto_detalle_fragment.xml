@@ -18,34 +18,28 @@
         android:gravity="center"
         android:layout_gravity="center"
         />
-    <FrameLayout
-        android:id="@+id/imgFotoProdFrame"
+
+    <ImageView
+        android:id="@+id/imgFotoProductoDetail"
+        android:layout_width ="240dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/txtNombreProductoDetail"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageButton
+        android:id="@+id/estrellaFavoritos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/txtNombreProductoDetail"
-        android:layout_marginTop="10dp">
-
-        <ImageView
-            android:id="@+id/imgFotoProductoDetail"
-            android:layout_width ="240dp"
-            android:layout_height="220dp"
-            android:layout_marginTop="10dp"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            />
-
-        <ImageButton
-            android:id="@+id/estrellaFavoritos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|end"
-            android:layout_margin="10dp"
-            android:background="@android:color/transparent"
-            android:src="@android:drawable/btn_star_big_off" />
-
-    </FrameLayout>
-
+        android:layout_margin="10dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/btn_star_big_off"
+        android:layout_alignEnd="@+id/imgFotoProductoDetail"
+        android:layout_alignTop="@+id/imgFotoProductoDetail"
+        />
 
     <TextView
         android:id="@+id/txtDescripcionProductoDetail"
@@ -53,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/imgFotoProdFrame"
+        android:layout_below="@+id/imgFotoProductoDetail"
         android:fontFamily="monospace"
         android:textColor="@color/white"
         android:textSize="14dp"
