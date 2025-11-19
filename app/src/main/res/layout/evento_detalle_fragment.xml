@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/noticia_detail_card">
+    android:background="@drawable/producto_detail_card">
 
     <TextView
-        android:id="@+id/txtTitularDetail"
+        android:id="@+id/txtTituloEventoDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -19,42 +19,27 @@
         />
 
     <ImageView
-        android:id="@+id/imgFotoNoticiaDetail"
-        android:layout_width="240dp"
+        android:id="@+id/imgFotoEventoDetail"
+        android:layout_width ="240dp"
         android:layout_height="220dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/txtTitularDetail"
+        android:layout_marginTop="20dp"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
+        android:layout_below="@+id/txtTituloEventoDetail"
+        android:layout_centerHorizontal="true"
         />
 
     <TextView
-        android:id="@+id/txtDescripcionNoticiaDetail"
+        android:id="@+id/txtDescripcionEventoDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/imgFotoNoticiaDetail"
+        android:layout_below="@+id/imgFotoEventoDetail"
         android:fontFamily="monospace"
         android:textColor="@color/white"
         android:textSize="14dp"
         android:gravity="center"
         android:textStyle="bold"
         />
-
-    <TextView
-        android:id="@+id/txtFechaNoticiaDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/txtDescripcionNoticiaDetail"
-        android:fontFamily="monospace"
-        android:textColor="@color/white"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        />
-
 </RelativeLayout>

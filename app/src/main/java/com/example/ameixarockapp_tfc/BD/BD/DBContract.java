@@ -64,4 +64,22 @@ public class DBContract {
         public static final String COLUMN_NAME_IDUSUARIO = "idUsuario";
         public static final String COLUMN_NAME_IDFOTO = "idFoto";
     }
+
+    public static abstract class eventoHistoriaEntry implements BaseColumns {
+        public static final String TABLE_NAME = "EventoHistoria";
+        public static final String COLUMN_NAME_IDEVENTO = "id";
+        public static final String COLUMN_NAME_TITULO = "titulo";
+        public static final String COLUMN_NAME_DESCRIPCION = "descripcion";
+        public static final String COLUMN_NAME_FECHA = "fecha";
+        public static final String COLUMN_NAME_FOTO = "foto";
+    }
+
+    public static abstract class actuacionEntry implements BaseColumns {
+        public static final String TABLE_NAME = "Actuacion";
+        public static final String COLUMN_NAME_IDACTUACION = "id";
+        public static final String COLUMN_NAME_ARTISTA = "artista";
+        public static final String COLUMN_NAME_HORA = "hora";
+        public static final String COLUMN_NAME_DIA = "dia";
+        public static final String COLUMN_NAME_LUGAR = "lugar";
+    }
 }

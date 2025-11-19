@@ -16,11 +16,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.ameixarockapp_tfc.BD.BD.DBHelper;
+import com.example.ameixarockapp_tfc.BD.DAO.ActuacionDAO;
+import com.example.ameixarockapp_tfc.BD.DAO.EventoHistoriaDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.FotoDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.NoticiaDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.ProductoDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.TallaDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.UsuarioDAO;
+import com.example.ameixarockapp_tfc.BD.modelo.Actuacion;
+import com.example.ameixarockapp_tfc.BD.modelo.EventoHistoria;
 import com.example.ameixarockapp_tfc.BD.modelo.Foto;
 import com.example.ameixarockapp_tfc.BD.modelo.Noticia;
 import com.example.ameixarockapp_tfc.BD.modelo.Producto;
@@ -44,6 +48,8 @@ public class LoginActivity extends AppCompatActivity {
     private NoticiaDAO noticiaDAO;
     private UsuarioDAO usuarioDAO;
     private FotoDAO fotoDAO;
+    private EventoHistoriaDAO eventoHistoriaDAO;
+    private ActuacionDAO actuacionDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
         noticiaDAO = new NoticiaDAO(dbHelper);
         usuarioDAO = new UsuarioDAO(dbHelper);
         fotoDAO = new FotoDAO(dbHelper);
+        actuacionDAO = new ActuacionDAO(dbHelper);
+        eventoHistoriaDAO = new EventoHistoriaDAO(dbHelper);
 
         Context context = this;
         SharedPreferences sharedPrefsLogin = context.getSharedPreferences(
@@ -235,6 +243,62 @@ public class LoginActivity extends AppCompatActivity {
                     int edicion = Integer.parseInt(propiedades[2].trim());
                     if(fotoDAO.obtenerFotoPorId(id) == null){
                         fotoDAO.insertarFoto(new Foto(id, foto, edicion));
+                    }
+                }
+            }
+            br.close();
+            is.close();
+        } catch (IOException e) {
+            throw new RuntimeException("Error de lectura de datos: " + e.getMessage(),e);
+        } catch (NumberFormatException e) {
+            throw new RuntimeException("Error de formato de ID: " + e.getMessage(),e);
+        }
+
+        try {
+            InputStream is = getAssets().open("eventoshistoriameixarock.csv");
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String line;
+
+            br.readLine();
+            while((line = br.readLine()) != null){
+                String[] propiedades = line.split(";", -1);
+
+                if(propiedades.length >= 5){
+                    int id = Integer.parseInt(propiedades[0].trim());
+                    String titulo = propiedades[1].trim();
+                    String descripcion = propiedades[2].trim();
+                    String fecha = propiedades[3].trim();
+                    String foto = propiedades[4].trim();
+                    if(eventoHistoriaDAO.obtenerEventoPorId(id) == null){
+                        eventoHistoriaDAO.insertarEventoHistoria(new EventoHistoria(id, titulo, descripcion, fecha, foto));
+                    }
+                }
+            }
+            br.close();
+            is.close();
+        } catch (IOException e) {
+            throw new RuntimeException("Error de lectura de datos: " + e.getMessage(),e);
+        } catch (NumberFormatException e) {
+            throw new RuntimeException("Error de formato de ID: " + e.getMessage(),e);
+        }
+
+        try {
+            InputStream is = getAssets().open("actuacionesameixarock.csv");
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String line;
+
+            br.readLine();
+            while((line = br.readLine()) != null){
+                String[] propiedades = line.split(";", -1);
+
+                if(propiedades.length >= 5){
+                    int id = Integer.parseInt(propiedades[0].trim());
+                    String artista = propiedades[1].trim();
+                    String hora = propiedades[2].trim();
+                    String dia = propiedades[3].trim();
+                    String lugar = propiedades[4].trim();
+                    if(actuacionDAO.obtenerActuacionPorId(id) == null){
+                        actuacionDAO.insertarActuacion(new Actuacion(id, artista, hora, dia, lugar));
                     }
                 }
             }

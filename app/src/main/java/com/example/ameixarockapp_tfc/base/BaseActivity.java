@@ -78,14 +78,14 @@ public abstract class BaseActivity extends AppCompatActivity {
                 startActivity(intent);
             }
             return true;
-        } else if (id==R.id.ContactoScreen) {
-            if(currentScreen == ContactoActivity.class){
-                Toast.makeText(this, "Xa estás na pantalla Contacto", Toast.LENGTH_SHORT).show();
-            } else {
-                Intent intent = new Intent(this, ContactoActivity.class);
-                startActivity(intent);
-            }
-            return true;
+//        } else if (id==R.id.ContactoScreen) {
+//            if(currentScreen == ContactoActivity.class){
+//                Toast.makeText(this, "Xa estás na pantalla Contacto", Toast.LENGTH_SHORT).show();
+//            } else {
+//                Intent intent = new Intent(this, ContactoActivity.class);
+//                startActivity(intent);
+//            }
+//            return true;
         } else if (id==R.id.CerrarSesion) {
             SharedPreferences sharedPrefsLogin = getSharedPreferences(
                     getString(R.string.preferenceLogin_file_key), Context.MODE_PRIVATE

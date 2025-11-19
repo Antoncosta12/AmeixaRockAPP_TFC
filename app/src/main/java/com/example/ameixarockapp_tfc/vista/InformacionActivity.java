@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,10 +13,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.ameixarockapp_tfc.BD.BD.DBHelper;
+import com.example.ameixarockapp_tfc.BD.DAO.ActuacionDAO;
+import com.example.ameixarockapp_tfc.BD.modelo.Actuacion;
 import com.example.ameixarockapp_tfc.R;
+import com.example.ameixarockapp_tfc.adapters.ActuacionAdapter;
+import com.example.ameixarockapp_tfc.adapters.NoticiaAdapter;
 import com.example.ameixarockapp_tfc.base.BaseActivity;
 
+import java.util.List;
+
 public class InformacionActivity extends BaseActivity {
+    private ActuacionDAO actuacionDAO;
+    private DBHelper dbHelper;
+    private ActuacionAdapter actuacionAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +39,8 @@ public class InformacionActivity extends BaseActivity {
             return insets;
         });
         configMenuToolbar();
+        dbHelper = new DBHelper(this);
+        actuacionDAO = new ActuacionDAO(dbHelper);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -37,5 +50,11 @@ public class InformacionActivity extends BaseActivity {
         Drawable logo_Escalado = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 90, 90, true));
         toolbar.setNavigationIcon(logo_Escalado);
         toolbar.setPadding(0,30,0,20);
+
+        List<Actuacion> actuacionesSabado = actuacionDAO.obtenerActuacionesPorDia("Sábado 6");
+        ListView listaActuacionesDia1 = findViewById(R.id.listaActuaciones);
+        actuacionAdapter = new ActuacionAdapter(this, actuacionesSabado);
+        listaActuacionesDia1.setAdapter(actuacionAdapter);
+
     }
 }

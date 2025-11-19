@@ -40,6 +40,29 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 />
 
+            <ImageButton
+                android:id="@+id/btnAtrasGaleria"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/arrow_back"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageButton
+                android:id="@+id/btnFavoritosGaleria"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="340dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/estrella_grande_off"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listaEdiciones"
                 android:layout_width="match_parent"

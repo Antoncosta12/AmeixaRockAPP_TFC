@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 10;
+    public static final int DATABASE_VERSION = 12;
     public static final String DATABASE_NAME = "AmeixaRock.db";
 
     public DBHelper(@Nullable Context context) {
@@ -29,6 +29,8 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_ENTRIES_USUARIO);
         db.execSQL(SQL_CREATE_ENTRIES_FAVORITOPRODUCTO);
         db.execSQL(SQL_CREATE_ENTRIES_FAVORITOFOTO);
+        db.execSQL(SQL_CREATE_ENTRIES_EVENTOHISTORIA);
+        db.execSQL(SQL_CREATE_ENTRIES_ACTUACION);
     }
 
     @Override
@@ -40,6 +42,8 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_ENTRIES_USUARIO);
         db.execSQL(SQL_DELETE_ENTRIES_FAVORITOPRODUCTO);
         db.execSQL(SQL_DELETE_ENTRIES_FAVORITOFOTO);
+        db.execSQL(SQL_DELETE_ENTRIES_EVENTOHISTORIA);
+        db.execSQL(SQL_DELETE_ENTRIES_ACTUACION);
         onCreate(db);
     }
 
@@ -50,7 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
                     DBContract.fotoEntry.COLUMN_NAME_EDICION + " INTEGER)";
     private static final String SQL_CREATE_ENTRIES_NOTICIA =
             "CREATE TABLE " + DBContract.noticiaEntry.TABLE_NAME + " (" +
-                    DBContract.noticiaEntry.COLUMN_NAME_IDNOTICIA + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    DBContract.noticiaEntry.COLUMN_NAME_IDNOTICIA + " INTEGER PRIMARY KEY," +
                     DBContract.noticiaEntry.COLUMN_NAME_TITULO + " TEXT," +
                     DBContract.noticiaEntry.COLUMN_NAME_CONTENIDO + " TEXT," +
                     DBContract.noticiaEntry.COLUMN_NAME_FECHA + " TEXT," +
@@ -63,9 +67,8 @@ public class DBHelper extends SQLiteOpenHelper {
                     DBContract.productEntry.COLUMN_NAME_OBSPROD + " TEXT," +
                     DBContract.productEntry.COLUMN_NAME_DESCRPROD + " TEXT," +
                     DBContract.productEntry.COLUMN_NAME_FOTO + " TEXT," +
-                    DBContract.productEntry.COLUMN_NAME_PRECIO + " REAL," + //Es el standard de SQLite para double
+                    DBContract.productEntry.COLUMN_NAME_PRECIO + " REAL," +
                     DBContract.productEntry.COLUMN_NAME_CATEGORIA + " TEXT)";
-
     private static final String SQL_CREATE_ENTRIES_TALLA =
             "CREATE TABLE " + DBContract.tallaEntry.TABLE_NAME + " (" +
                     DBContract.tallaEntry.COLUMN_NAME_IDTALLA + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -73,7 +76,6 @@ public class DBHelper extends SQLiteOpenHelper {
                     DBContract.tallaEntry.COLUMN_NAME_IDPRODUCTO + " INTEGER NOT NULL, " +
                     "FOREIGN KEY(" + DBContract.tallaEntry.COLUMN_NAME_IDPRODUCTO + ") REFERENCES " +
                     DBContract.productEntry.TABLE_NAME + "(" + DBContract.productEntry.COLUMN_NAME_IDPRODUCTO + ") ON DELETE CASCADE)";
-
     private static final String SQL_CREATE_ENTRIES_USUARIO =
             "CREATE TABLE " + DBContract.usuarioEntry.TABLE_NAME + " (" +
                     DBContract.usuarioEntry.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -82,7 +84,6 @@ public class DBHelper extends SQLiteOpenHelper {
                     DBContract.usuarioEntry.COLUMN_NAME_PASSWORD + " TEXT," +
                     DBContract.usuarioEntry.COLUMN_NAME_CORREOELECTRONICO + " TEXT," +
                     DBContract.usuarioEntry.COLUMN_NAME_ORIGEN + " TEXT)";
-
     private static final String SQL_CREATE_ENTRIES_FAVORITOPRODUCTO =
             "CREATE TABLE " + DBContract.favoritoProductoEntry.TABLE_NAME + " (" +
                     DBContract.favoritoProductoEntry.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -92,7 +93,6 @@ public class DBHelper extends SQLiteOpenHelper {
                     DBContract.usuarioEntry.TABLE_NAME + "(" + DBContract.usuarioEntry.COLUMN_NAME_ID + ") ON DELETE CASCADE, " +
                     "FOREIGN KEY(" + DBContract.favoritoProductoEntry.COLUMN_NAME_IDPRODUCTO + ") REFERENCES " +
                     DBContract.productEntry.TABLE_NAME + "(" + DBContract.productEntry.COLUMN_NAME_IDPRODUCTO + ") ON DELETE CASCADE)";
-
     private static final String SQL_CREATE_ENTRIES_FAVORITOFOTO =
             "CREATE TABLE " + DBContract.favoritoFotoEntry.TABLE_NAME + " (" +
                     DBContract.favoritoFotoEntry.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -102,6 +102,21 @@ public class DBHelper extends SQLiteOpenHelper {
                     DBContract.usuarioEntry.TABLE_NAME + "(" + DBContract.usuarioEntry.COLUMN_NAME_ID + ") ON DELETE CASCADE, " +
                     "FOREIGN KEY(" + DBContract.favoritoFotoEntry.COLUMN_NAME_IDFOTO + ") REFERENCES " +
                     DBContract.fotoEntry.TABLE_NAME + "(" + DBContract.fotoEntry.COLUMN_NAME_IDFOTO + ") ON DELETE CASCADE)";
+    private static final String SQL_CREATE_ENTRIES_EVENTOHISTORIA =
+            "CREATE TABLE " + DBContract.eventoHistoriaEntry.TABLE_NAME + " (" +
+                    DBContract.eventoHistoriaEntry.COLUMN_NAME_IDEVENTO + " INTEGER PRIMARY KEY," +
+                    DBContract.eventoHistoriaEntry.COLUMN_NAME_TITULO + " TEXT," +
+                    DBContract.eventoHistoriaEntry.COLUMN_NAME_DESCRIPCION + " TEXT," +
+                    DBContract.eventoHistoriaEntry.COLUMN_NAME_FECHA + " TEXT," +
+                    DBContract.eventoHistoriaEntry.COLUMN_NAME_FOTO + " TEXT)";
+
+    private static final String SQL_CREATE_ENTRIES_ACTUACION =
+            "CREATE TABLE " + DBContract.actuacionEntry.TABLE_NAME + " (" +
+                    DBContract.actuacionEntry.COLUMN_NAME_IDACTUACION + " INTEGER PRIMARY KEY," +
+                    DBContract.actuacionEntry.COLUMN_NAME_ARTISTA + " TEXT," +
+                    DBContract.actuacionEntry.COLUMN_NAME_HORA + " TEXT," +
+                    DBContract.actuacionEntry.COLUMN_NAME_DIA + " TEXT," +
+                    DBContract.actuacionEntry.COLUMN_NAME_LUGAR + " TEXT)";
 
     private static final String SQL_DELETE_ENTRIES_FOTO =
             "DROP TABLE IF EXISTS " + DBContract.fotoEntry.TABLE_NAME;
@@ -123,4 +138,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String SQL_DELETE_ENTRIES_FAVORITOFOTO =
             "DROP TABLE IF EXISTS " + DBContract.favoritoFotoEntry.TABLE_NAME;
+
+    private static final String SQL_DELETE_ENTRIES_EVENTOHISTORIA =
+            "DROP TABLE IF EXISTS " + DBContract.eventoHistoriaEntry.TABLE_NAME;
+
+    private static final String SQL_DELETE_ENTRIES_ACTUACION =
+            "DROP TABLE IF EXISTS " + DBContract.actuacionEntry.TABLE_NAME;
 }

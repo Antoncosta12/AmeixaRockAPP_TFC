@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,14 +18,17 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ameixarockapp_tfc.BD.BD.DBHelper;
+import com.example.ameixarockapp_tfc.BD.DAO.EventoHistoriaDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.FotoDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.ProductoDAO;
+import com.example.ameixarockapp_tfc.BD.modelo.EventoHistoria;
 import com.example.ameixarockapp_tfc.BD.modelo.Foto;
 import com.example.ameixarockapp_tfc.BD.modelo.Producto;
 import com.example.ameixarockapp_tfc.R;
 import com.example.ameixarockapp_tfc.adapters.FotoAdapter;
 import com.example.ameixarockapp_tfc.adapters.ProductoAdapter;
 import com.example.ameixarockapp_tfc.base.BaseActivity;
+import com.example.ameixarockapp_tfc.fragments.EventoHistoriaDialogFragment;
 import com.example.ameixarockapp_tfc.fragments.FotoDialogFragment;
 import com.example.ameixarockapp_tfc.fragments.GaleriaFragment;
 import com.example.ameixarockapp_tfc.fragments.ProductoDialogFragment;
@@ -36,6 +40,7 @@ public class HistoriaActivity extends BaseActivity {
     private FotoAdapter adapter;
     private DBHelper dbHelper;
     private FotoDAO fotoDAO;
+    private EventoHistoriaDAO eventoDAO;
     private List<Foto> fotosMuestra;
 
     @Override
@@ -51,6 +56,7 @@ public class HistoriaActivity extends BaseActivity {
         configMenuToolbar();
         dbHelper = new DBHelper(this);
         fotoDAO = new FotoDAO(dbHelper);
+        eventoDAO = new EventoHistoriaDAO(dbHelper);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -62,6 +68,10 @@ public class HistoriaActivity extends BaseActivity {
         toolbar.setPadding(0,30,0,20);
 
         Button btnIrAGaleria = findViewById(R.id.btnAccederGaleria);
+        ImageButton btnEv1 = findViewById(R.id.btnEv1);
+        ImageButton btnEv2 = findViewById(R.id.btnEv2);
+        ImageButton btnEv3 = findViewById(R.id.btnEv3);
+        ImageButton btnEv4 = findViewById(R.id.btnEv4);
 
         fotosMuestra = fotoDAO.obtenerFotos();
         if(fotosMuestra.size() > 15){
@@ -93,7 +103,52 @@ public class HistoriaActivity extends BaseActivity {
 
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, galeriaFragment)
+                        .addToBackStack(null)
                         .commit();
+            }
+        });
+
+        btnEv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EventoHistoria e = eventoDAO.obtenerEventoPorId(1);
+                if(e != null){
+                    EventoHistoriaDialogFragment dialogFragment = new EventoHistoriaDialogFragment(e);
+                    dialogFragment.show(getSupportFragmentManager(), null);
+                }
+            }
+        });
+
+        btnEv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EventoHistoria e = eventoDAO.obtenerEventoPorId(2);
+                if(e != null){
+                    EventoHistoriaDialogFragment dialogFragment = new EventoHistoriaDialogFragment(e);
+                    dialogFragment.show(getSupportFragmentManager(), null);
+                }
+            }
+        });
+
+        btnEv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EventoHistoria e = eventoDAO.obtenerEventoPorId(3);
+                if(e != null){
+                    EventoHistoriaDialogFragment dialogFragment = new EventoHistoriaDialogFragment(e);
+                    dialogFragment.show(getSupportFragmentManager(), null);
+                }
+            }
+        });
+
+        btnEv4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EventoHistoria e = eventoDAO.obtenerEventoPorId(4);
+                if(e != null){
+                    EventoHistoriaDialogFragment dialogFragment = new EventoHistoriaDialogFragment(e);
+                    dialogFragment.show(getSupportFragmentManager(), null);
+                }
             }
         });
     }
