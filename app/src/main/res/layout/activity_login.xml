@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".vista.LoginActivity"
-    android:background="@drawable/fondo_degradado">
+    android:background="@drawable/fondo_ameixarock">
 
     <TextView
         android:id="@+id/txtTituloLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AMEIXA ROCK\n2025"
-        android:textColor="@color/TitulosScreen"
+        android:textColor="@color/textStandard"
         android:textSize="45dp"
         android:textStyle="bold"
         android:gravity="center"

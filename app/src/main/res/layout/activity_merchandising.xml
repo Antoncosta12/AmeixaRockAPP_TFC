@@ -23,7 +23,7 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="MERCHANDISING"
-            android:textColor="@color/TitulosScreen"
+            android:textColor="@color/textStandard"
             android:textSize="35dp"
             />
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.RegistroFragment"
-    android:background="@drawable/fondo_degradado">
+    android:background="@drawable/fondo_ameixarock">
 
     <ImageButton
         android:id="@+id/btnAtrasRegistro"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AMEIXA ROCK\n2025"
-        android:textColor="@color/TitulosScreen"
+        android:textColor="@color/textStandard"
         android:textSize="45dp"
         android:textStyle="bold"
         android:gravity="center"
@@ -104,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿Como nos conociste?"
-        android:textColor="@color/TitulosScreen"
+        android:textColor="@color/textStandard"
         android:textSize="20dp"
         android:textStyle="bold"
         android:gravity="center"

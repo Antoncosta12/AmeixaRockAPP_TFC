@@ -11,29 +11,14 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="20dp"
-        android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textColor="@color/textStandard"
+        android:textSize="25dp"
         android:text="Edicion Prueba"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginLeft="25dp"
-        />
-
-    <TextView
-        android:id="@+id/txtHoraActuacion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:text="Hora"
-        app:layout_constraintTop_toBottomOf="@+id/txtArtistaActuacion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginLeft="25dp"
         />
 
     <TextView
@@ -42,14 +27,31 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="5dp"
-        android:textColor="@color/white"
+        android:textColor="@color/textStandard"
         android:textSize="20dp"
         android:text="Lugar"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/txtArtistaActuacion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginLeft="150dp"
         />
+
+    <TextView
+        android:id="@+id/txtHoraActuacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/textStandard"
+        android:textSize="20dp"
+        android:text="Hora"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/txtLugarActuacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
 
 
 

@@ -138,8 +138,8 @@ public class ActuacionDAO {
         Cursor cursor = db.query(
                 DBContract.actuacionEntry.TABLE_NAME,
                 columnas,
-                null,
-                null,
+                selection,
+                selectionArgs,
                 null,
                 null,
                 null
