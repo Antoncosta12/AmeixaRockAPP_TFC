@@ -43,6 +43,7 @@
                     android:text="HISTORIA"
                     android:textColor="@color/textStandard"
                     android:textSize="35dp"
+                    android:layout_marginRight="35dp"
                     />
 
             </androidx.appcompat.widget.Toolbar>

@@ -51,6 +51,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                 Toast.makeText(this, "Xa estás na pantalla Home", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intent = new Intent(this, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
             return true;
@@ -59,6 +60,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                 Toast.makeText(this, "Xa estás na pantalla Merchandising", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intent = new Intent(this, MerchandisingActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
             return true;
@@ -67,6 +69,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                 Toast.makeText(this, "Xa estás na pantalla Información", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intent = new Intent(this, InformacionActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
             return true;
@@ -75,17 +78,10 @@ public abstract class BaseActivity extends AppCompatActivity {
                 Toast.makeText(this, "Xa estás na pantalla Historia", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intent = new Intent(this, HistoriaActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
             return true;
-//        } else if (id==R.id.ContactoScreen) {
-//            if(currentScreen == ContactoActivity.class){
-//                Toast.makeText(this, "Xa estás na pantalla Contacto", Toast.LENGTH_SHORT).show();
-//            } else {
-//                Intent intent = new Intent(this, ContactoActivity.class);
-//                startActivity(intent);
-//            }
-//            return true;
         } else if (id==R.id.CerrarSesion) {
             SharedPreferences sharedPrefsLogin = getSharedPreferences(
                     getString(R.string.preferenceLogin_file_key), Context.MODE_PRIVATE
@@ -93,6 +89,8 @@ public abstract class BaseActivity extends AppCompatActivity {
             PreferenciasController.cerrarSesionUsuario(sharedPrefsLogin);
 
             Intent intent = new Intent(this, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
         }

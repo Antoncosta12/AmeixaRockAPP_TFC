@@ -310,35 +310,34 @@ public class LoginActivity extends AppCompatActivity {
             throw new RuntimeException("Error de formato de ID: " + e.getMessage(),e);
         }
 
-//        try {
-//            InputStream is = getAssets().open("usuariosameixarock.csv");
-//            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-//            String line;
-//
-//            br.readLine();
-//            while((line = br.readLine()) != null){
-//                String[] propiedades = line.split(";", -1);
-//
-//                if(propiedades.length >= 5){
-//                    int id = Integer.parseInt(propiedades[0].trim());
-//                    String nombre = propiedades[1].trim();
-//                    String apellido = propiedades[2].trim();
-//                    String nomUsuario = propiedades[3].trim();
-//                    String passwordUser = propiedades[4].trim();
-//                    String correoElectronico = propiedades[5].trim();
-//                    String origen = propiedades[6].trim();
-//                    if(usuarioDAO.obtenerUsuarioPorId(id) == null){
-//                        usuarioDAO.insertarUsuario(new Usuario(id, nombre, apellido, nomUsuario, passwordUser, correoElectronico, origen));
-//                    }
-//                }
-//            }
-//            br.close();
-//            is.close();
-//        } catch (IOException e) {
-//            throw new RuntimeException("Error de lectura de datos: " + e.getMessage(),e);
-//        } catch (NumberFormatException e) {
-//            throw new RuntimeException("Error de formato de ID: " + e.getMessage(),e);
-//        }
+        try {
+            InputStream is = getAssets().open("usuariosameixarock.csv");
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String line;
+
+            br.readLine();
+            while((line = br.readLine()) != null){
+                String[] propiedades = line.split(";", -1);
+
+                if(propiedades.length >= 5){
+                    int id = Integer.parseInt(propiedades[0].trim());
+                    String nombre = propiedades[1].trim();
+                    String nomUsuario = propiedades[2].trim();
+                    String passwordUser = propiedades[3].trim();
+                    String correoElectronico = propiedades[4].trim();
+                    String origen = propiedades[5].trim();
+                    if(usuarioDAO.obtenerUsuarioPorNomUser(nomUsuario) == null){
+                        usuarioDAO.insertarUsuario(new Usuario(nombre, nomUsuario, passwordUser, correoElectronico, origen));
+                    }
+                }
+            }
+            br.close();
+            is.close();
+        } catch (IOException e) {
+            throw new RuntimeException("Error de lectura de datos: " + e.getMessage(),e);
+        } catch (NumberFormatException e) {
+            throw new RuntimeException("Error de formato de ID: " + e.getMessage(),e);
+        }
         //*****************************************************************************
     }
 
