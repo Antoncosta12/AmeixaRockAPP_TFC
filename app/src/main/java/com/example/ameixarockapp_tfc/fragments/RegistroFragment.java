@@ -62,7 +62,7 @@ public class RegistroFragment extends Fragment {
         Spinner opsOrigen = view.findViewById(R.id.cmbOrigenRegistro);
         Button btnRegistro = view.findViewById(R.id.btnRegistro);
 
-        String[] origenes = {"Redes Sociales","Medios de comunicación","Familiares/Amigos","Publicidad","Otros"};
+        String[] origenes = {"Redes Sociais","Medios de comunicación","Familiares/Amigos","Publicidade","Outros"};
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(requireContext(), R.layout.spinner_element, origenes);
         opsOrigen.setAdapter(spinnerAdapter);
 
@@ -81,7 +81,7 @@ public class RegistroFragment extends Fragment {
                 String origen = opsOrigen.getSelectedItem().toString();
 
                 if(nombre.isBlank() || correo.isBlank() || nomUser.isBlank() || campoPassword.isBlank() || origen.isBlank()){
-                    Toast.makeText(getContext(), "Debe rellenar todos los campos del formulario", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Debe encher todos os campos do formulario", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -107,10 +107,10 @@ public class RegistroFragment extends Fragment {
                             getActivity().finish();
                         }
                     } else {
-                        Toast.makeText(getContext(), "Ya existe un usuario asociado a ese correo electrónico", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Xa existe un usuario asociado a ese correo electrónico", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(getContext(), "Ya existe un usuario con ese nombre", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Xa existe un usuario con ese nome", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                 String passwordUsuario = password.getText().toString();
 
                 if(nomUsuario.isBlank() || passwordUsuario.isBlank()){
-                    Toast.makeText(getBaseContext(), "Debe rellenar todos los datos para iniciar sesión", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), "Debe encher todos os datos para iniciar sesión", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -108,10 +108,10 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(LoginActivity.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Contrasinal incorrecto", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(LoginActivity.this, "No existe ningún usuario con ese nombre", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Non existe ningún usuario con ese nome", Toast.LENGTH_SHORT).show();
                 }
             }
         });

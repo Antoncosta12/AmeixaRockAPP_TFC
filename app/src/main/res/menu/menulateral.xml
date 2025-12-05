@@ -3,8 +3,8 @@
 
         <item android:id="@+id/HomeScreen" android:title="Home" android:icon="@drawable/ic_home"/>
         <item android:id="@+id/MerchandisingScreen" android:title="Merchandising" android:icon="@drawable/ic_carrito"/>
-        <item android:id="@+id/InformacionScreen" android:title="Informacion" android:icon="@drawable/ic_information"/>
+        <item android:id="@+id/InformacionScreen" android:title="Información" android:icon="@drawable/ic_information"/>
         <item android:id="@+id/HistoriaScreen" android:title="Historia" android:icon="@drawable/ic_book"/>
-        <item android:id="@+id/CerrarSesion" android:title="Cerrar Sesión" android:icon="@drawable/ic_door"/>
+        <item android:id="@+id/CerrarSesion" android:title="Pechar Sesión" android:icon="@drawable/ic_door"/>
 
 </menu>
