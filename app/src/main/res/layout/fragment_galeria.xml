@@ -59,7 +59,7 @@
                 android:layout_marginStart="340dp"
                 android:layout_marginTop="20dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/estrella_grande_off"
+                android:src="@drawable/ic_estrella_grande_off"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

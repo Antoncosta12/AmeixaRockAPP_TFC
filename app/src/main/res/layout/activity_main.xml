@@ -21,7 +21,7 @@
             android:fontFamily="sans-serif-condensed"
             android:text="AMEIXA ROCK"
             android:textColor="@color/textStandard"
-            android:textSize="35dp"
+            android:textSize="30dp"
             android:gravity="center"
             android:layout_marginRight="35dp"
             />
@@ -74,7 +74,7 @@
             android:id="@+id/btnYoutube"
             android:layout_width="60dp"
             android:layout_height="54dp"
-            android:src="@drawable/youtube_logo"
+            android:src="@drawable/logo_youtube"
             android:background="@color/AmeixaRockBackGround"
             />
 
@@ -83,7 +83,7 @@
             android:layout_width="54dp"
             android:layout_height="54dp"
             android:layout_marginStart="16dp"
-            android:src="@drawable/facebook_icon"
+            android:src="@drawable/logo_facebook"
             android:background="@color/AmeixaRockBackGround"
             />
 
@@ -91,7 +91,7 @@
             android:id="@+id/btnInstagram"
             android:layout_width="54dp"
             android:layout_height="54dp"
-            android:src="@drawable/instagram_icon"
+            android:src="@drawable/logo_instagram"
             android:layout_marginStart="16dp"
             android:background="@color/AmeixaRockBackGround"
             />
@@ -100,7 +100,7 @@
             android:id="@+id/btnTwitter"
             android:layout_width="54dp"
             android:layout_height="54dp"
-            android:src="@drawable/twitter_logo"
+            android:src="@drawable/logo_twitter"
             android:layout_marginStart="16dp"
             android:background="@color/AmeixaRockBackGround"
             />

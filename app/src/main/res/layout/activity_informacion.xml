@@ -43,7 +43,7 @@
                     android:gravity="center"
                     android:text="INFORMACIÓN"
                     android:textColor="@color/textStandard"
-                    android:textSize="35dp"
+                    android:textSize="30dp"
                     android:layout_marginRight="35dp"
                     />
 
@@ -56,7 +56,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/toolbar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/fondo_info_prueba3"
+                android:src="@drawable/fondo_info_prueba"
                 android:scaleType="centerCrop"
                 />
 

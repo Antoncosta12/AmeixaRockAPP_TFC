@@ -12,15 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.example.ameixarockapp_tfc.BD.BD.DBHelper;
 import com.example.ameixarockapp_tfc.BD.DAO.FavoritoFotoDAO;
 import com.example.ameixarockapp_tfc.BD.DAO.FotoDAO;
 import com.example.ameixarockapp_tfc.BD.modelo.FavoritoFoto;
-import com.example.ameixarockapp_tfc.BD.modelo.FavoritoProducto;
 import com.example.ameixarockapp_tfc.BD.modelo.Foto;
-import com.example.ameixarockapp_tfc.BD.modelo.Producto;
 import com.example.ameixarockapp_tfc.BD.modelo.Usuario;
 import com.example.ameixarockapp_tfc.BD.preferencias.PreferenciasController;
 import com.example.ameixarockapp_tfc.R;
@@ -138,11 +135,11 @@ public class GaleriaFragment extends Fragment {
                         }
                     });
 
-                    btnFavoritos.setImageResource(R.drawable.estrella_grande_on);
+                    btnFavoritos.setImageResource(R.drawable.ic_estrella_grande_on);
                     favoritos = true;
                 } else {
                     recyclerView.setAdapter(adapterEdicion);
-                    btnFavoritos.setImageResource(R.drawable.estrella_grande_off);
+                    btnFavoritos.setImageResource(R.drawable.ic_estrella_grande_off);
                     favoritos = false;
                 }
 

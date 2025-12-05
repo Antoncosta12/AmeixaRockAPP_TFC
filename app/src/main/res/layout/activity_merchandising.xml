@@ -24,8 +24,8 @@
             android:gravity="center"
             android:text="MERCHANDISING"
             android:textColor="@color/textStandard"
-            android:textSize="35dp"
-            android:layout_marginRight="35dp"
+            android:textSize="27dp"
+            android:layout_marginRight="33dp"
             />
 
     </androidx.appcompat.widget.Toolbar>

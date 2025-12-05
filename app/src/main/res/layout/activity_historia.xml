@@ -42,7 +42,7 @@
                     android:gravity="center_horizontal"
                     android:text="HISTORIA"
                     android:textColor="@color/textStandard"
-                    android:textSize="35dp"
+                    android:textSize="30dp"
                     android:layout_marginRight="35dp"
                     />
 
@@ -56,7 +56,7 @@
                 app:layout_constraintTop_toBottomOf="@id/toolbar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/img_20180918_wa0001"
+                android:src="@drawable/fondo_history"
                 android:scaleType="centerCrop"
                 />
 
@@ -108,12 +108,12 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="@drawable/boton_lineatemporal"
-                    android:src="@drawable/estrella"
+                    android:src="@drawable/ic_estrella"
                     />
 
                 <View
                     android:layout_width="5dp"
-                    android:layout_height="40dp"
+                    android:layout_height="35dp"
                     android:background="@color/RojoClaro"/>
 
                 <ImageButton
@@ -121,12 +121,12 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="@drawable/boton_lineatemporal"
-                    android:src="@drawable/coronavirus"
+                    android:src="@drawable/ic_coronavirus"
                     />
 
                 <View
                     android:layout_width="5dp"
-                    android:layout_height="40dp"
+                    android:layout_height="35dp"
                     android:background="@color/RojoClaro"/>
 
                 <ImageButton
@@ -134,12 +134,12 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="@drawable/boton_lineatemporal"
-                    android:src="@drawable/celebration"
+                    android:src="@drawable/ic_celebration"
                     />
 
                 <View
                     android:layout_width="5dp"
-                    android:layout_height="40dp"
+                    android:layout_height="35dp"
                     android:background="@color/RojoClaro"/>
 
                 <ImageButton
@@ -147,7 +147,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="@drawable/boton_lineatemporal"
-                    android:src="@drawable/trofeo"
+                    android:src="@drawable/ic_trofeo"
                     />
 
             </LinearLayout>
@@ -195,7 +195,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtHistoria1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="53dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginLeft="110dp"
                 />
 
@@ -210,7 +210,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtHistoria1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="53dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginLeft="170dp"
                 />
 
@@ -226,7 +226,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtHistoria2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="53dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginLeft="110dp"
                 />
 
@@ -241,7 +241,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtHistoria2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="53dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginLeft="170dp"
                 />
 
@@ -257,7 +257,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtHistoria3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="53dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginLeft="110dp"
                 />
 
@@ -272,7 +272,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtHistoria3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="53dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginLeft="170dp"
                 />
 

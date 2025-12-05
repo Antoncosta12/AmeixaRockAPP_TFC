@@ -5,10 +5,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -20,8 +18,6 @@ import com.example.ameixarockapp_tfc.BD.DAO.ActuacionDAO;
 import com.example.ameixarockapp_tfc.BD.modelo.Actuacion;
 import com.example.ameixarockapp_tfc.R;
 import com.example.ameixarockapp_tfc.adapters.ActuacionAdapter;
-import com.example.ameixarockapp_tfc.adapters.FotoAdapter;
-import com.example.ameixarockapp_tfc.adapters.NoticiaAdapter;
 import com.example.ameixarockapp_tfc.base.BaseActivity;
 
 import java.util.List;
@@ -67,10 +63,10 @@ public class InformacionActivity extends BaseActivity {
         recyclerView2.setAdapter(actuacionAdapterDia2);
 
         ImageView imgMapa = findViewById(R.id.imgMapa);
-        imgMapa.setImageResource(R.drawable.mapaameixarock2025);
+        imgMapa.setImageResource(R.drawable.foto_mapaameixarock2025);
         ImageView imgCartel = findViewById(R.id.imgCartel);
-        imgCartel.setImageResource(R.drawable.ameixarock_cartel_2025);
+        imgCartel.setImageResource(R.drawable.foto_ameixarock_cartel_2025);
         ImageView imgNormas = findViewById(R.id.imgNormas);
-        imgNormas.setImageResource(R.drawable.normas_ameixarock);
+        imgNormas.setImageResource(R.drawable.foto_normas_ameixarock);
     }
 }

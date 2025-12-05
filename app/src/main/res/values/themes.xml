@@ -5,18 +5,28 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.AmeixaRockAPP_TFC" parent="Base.Theme.AmeixaRockAPP_TFC" />
+    <style name="Theme.AmeixaRockAPP_TFC" parent="Base.Theme.AmeixaRockAPP_TFC" >
+        <item name="popupTheme">@style/Theme.AmeixaRockAPP_TFC.MenuDesplegable</item>
+    </style>
+
     <style name="Theme.AmeixaRockAPP_TFC.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.AmeixaRockAPP_TFC.AppBarOverlay"
-        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AmeixaRockAPP_TFC.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.AmeixaRockAPP_TFC.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Theme.AmeixaRockAPP_TFC.LaunchScreen" parent="Base.Theme.AmeixaRockAPP_TFC">
         <item name="android:windowBackground">@color/AmeixaRockBackGround</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AmeixaRockAPP_TFC.MenuDesplegable" parent="ThemeOverlay.Material3.Dark">
+        <item name="android:popupBackground">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

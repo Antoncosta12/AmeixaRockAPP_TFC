@@ -16,8 +16,8 @@
             android:exported="true" />
         <activity
             android:name=".vista.LoginActivity"
-            android:theme="@style/Theme.AmeixaRockAPP_TFC.LaunchScreen"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.AmeixaRockAPP_TFC.LaunchScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,12 +34,8 @@
             android:name=".vista.MerchandisingActivity"
             android:exported="true" />
         <activity
-            android:name=".vista.ContactoActivity"
-            android:exported="true" />
-        <activity
             android:name=".vista.HomeActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

@@ -1,9 +1,12 @@
 package com.example.ameixarockapp_tfc.base;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -15,12 +18,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ameixarockapp_tfc.BD.preferencias.PreferenciasController;
 import com.example.ameixarockapp_tfc.R;
-import com.example.ameixarockapp_tfc.vista.ContactoActivity;
 import com.example.ameixarockapp_tfc.vista.HistoriaActivity;
 import com.example.ameixarockapp_tfc.vista.HomeActivity;
 import com.example.ameixarockapp_tfc.vista.InformacionActivity;
 import com.example.ameixarockapp_tfc.vista.LoginActivity;
 import com.example.ameixarockapp_tfc.vista.MerchandisingActivity;
+
+import java.lang.reflect.Method;
 
 public abstract class BaseActivity extends AppCompatActivity {
     @Override
@@ -52,6 +56,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             } else {
                 Intent intent = new Intent(this, HomeActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
             return true;
@@ -96,4 +101,24 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        if(menu.getClass().getSimpleName().equals("MenuBuilder")){
+            try{
+                Method m = menu.getClass().getDeclaredMethod(
+                        "setOptionalIconsVisible", Boolean.TYPE);
+                m.setAccessible(true);
+                m.invoke(menu, true);
+            }
+            catch(NoSuchMethodException e){
+                Log.e(TAG, "onMenuOpened", e);
+            }
+            catch(Exception e){
+                throw new RuntimeException(e);
+            }
+        }
+        return super.onPrepareOptionsMenu(menu);
+    }
+
 }
